@@ -6,7 +6,7 @@ public static double voltaje= 0;
 public static double carga;
 public static double capacitador;
 
-    public static void main(String[] args) {
+    public static void main (String[] args){
         String voltajeText;
         String cargaText;
         String i = "==================================";
@@ -32,7 +32,6 @@ public static double capacitador;
             System.out.println(i);
             System.out.println("El calculo realizado con la formula C = Q/V da como resultado de capacitancia: "+ capacitador);
         }
-
     }
 
         public static void cal_cap () {
