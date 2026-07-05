@@ -1,29 +1,41 @@
 import javax.swing.*;
 
 public class ejercicio1 {
-        public static void main(String[] args){
-            int numero1, numero2;
-            int suma;
-            String primernumero = JOptionPane.showInputDialog("Digite el primer numero");
-            numero1 = Integer.parseInt(primernumero);
-            if (numero1 <0){
-                JOptionPane.showMessageDialog(null, "Error: No se permite ingresar números negativos. El programa finalizará.");
-                System.exit(0);
-            }
-            String segundonumero = JOptionPane.showInputDialog("Digite el segundo numero");
-            numero2 = Integer.parseInt(segundonumero);
-            numero1 = Integer.parseInt(primernumero);
-            if (numero2 <0){
-                if (numero1 <0){
-                    JOptionPane.showMessageDialog(null, "Error: No se permite ingresar números negativos. El programa finalizará.");
-                    System.exit(0);
-                }
-            }
-            suma = numero1 + numero2;
-            JOptionPane.showMessageDialog(null, "La suma es:" +
-                    suma,"Resultado",JOptionPane.PLAIN_MESSAGE);
-            System.exit(0);
 
+public static double voltaje= 0;
+public static double carga;
+public static double capacitador;
+
+    public static void main (String[] args){
+        String voltajeText;
+        String cargaText;
+        String i = "==================================";
+        cargaText = JOptionPane.showInputDialog("digite carga (Q)");
+        voltajeText = JOptionPane.showInputDialog("ingrese voltaje (V)");
+
+        voltaje = Double.parseDouble(voltajeText);
+        carga = Double.parseDouble(cargaText);
+
+        System.out.println("\tDATOS INGRESADOS");
+        System.out.println(i);
+        System.out.println("la carga es de: " + carga);
+        System.out.println("El voltaje es de: "+ voltaje);
+
+
+        if (carga == 0) {
+            System.err.println("VALOR INVALIDO!!\nNO SE PUEDE DIVIDIR ENTRE 0!!");
+        } else if (voltaje < 0 || carga < 0) {
+            System.err.println("NO SE PUEDEN INGRESAR NUMERO NEGATIVOS");
+        }
+        else {
+            cal_cap();
+            System.out.println(i);
+            System.out.println("El calculo realizado con la formula C = Q/V da como resultado de capacitancia: "+ capacitador);
         }
     }
 
+        public static void cal_cap () {
+            capacitador = carga / voltaje;
+        }
+
+}
